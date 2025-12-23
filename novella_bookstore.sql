@@ -126,3 +126,33 @@ CREATE TABLE tbl_authors
 ALTER TABLE tbl_books ADD FK_author_id INT;
 -- Note: In a real project, you'd add the FK constraint here too.
 
+-- ---------------------------------------------------------
+-- Table: tbl_suppliers
+-- ---------------------------------------------------------
+USE novella_bookstore;
+CREATE TABLE tbl_suppliers
+(
+  PK_supplier_id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+  supplier_name VARCHAR(225) NOT NULL,
+  contact_person VARCHAR(100),
+  supplier_phone VARCHAR(20),
+  supplier_email VARCHAR(100)
+);
+
+-- ---------------------------------------------------------
+-- Update tbl_books to link to Suppliers
+-- ---------------------------------------------------------
+-- Adding a Foreign Key column to associate books with suppliers
+ALTER TABLE tbl_books ADD FK_supplier_id INT;
+ALTER TABLE tbl_books ADD FOREIGN KEY (FK_supplier_id) REFERENCES tbl_suppliers(PK_supplier_id);
+
+-- ---------------------------------------------------------
+-- TEST DATA: Suppliers
+-- ---------------------------------------------------------
+INSERT INTO tbl_suppliers (supplier_name, contact_person, supplier_phone, supplier_email) VALUES
+('Global Press', 'John Doe', '09-111-222', 'contact@globalpress.com'),
+('Elite Distributors', 'Jane Smith', '09-333-444', 'sales@elitedist.com');
+
+-- Update existing books with supplier IDs
+UPDATE tbl_books SET FK_supplier_id = 1 WHERE PK_book_id IN (1, 2, 3);
+UPDATE tbl_books SET FK_supplier_id = 2 WHERE PK_book_id IN (4, 5);
