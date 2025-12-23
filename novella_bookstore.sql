@@ -111,3 +111,18 @@ JOIN tbl_orders o ON c.PK_customer_id = o.PK_customer_id
 JOIN tbl_order_details od ON o.PK_order_id = od.PK_order_id
 JOIN tbl_books b ON od.PK_book_id = b.PK_book_id;
 
+-- ---------------------------------------------------------
+-- Table: tbl_authors
+-- ---------------------------------------------------------
+USE novella_bookstore;
+CREATE TABLE tbl_authors
+(
+  PK_author_id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+  author_name VARCHAR(225) NOT NULL,
+  author_bio TEXT
+);
+
+-- (Update tbl_books to include a Foreign Key)
+ALTER TABLE tbl_books ADD FK_author_id INT;
+-- Note: In a real project, you'd add the FK constraint here too.
+
