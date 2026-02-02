@@ -1,75 +1,36 @@
-# Restaurant Management System
+# Smart Library Management System
 
-## Project Overview
+## System Overview
+The Smart Library Management System (SLMS), also known as the SilentLibrary Project, is a Django-based web application designed to manage library operations efficiently. The system allows users to browse and borrow books, while administrators manage books and users through a secure admin dashboard. 
 
-This is a Python Django web application used to manage a restaurant’s daily operations. It allows staff to manage menu items, customer reservations, and orders using a browser-based system. The project is built using Python 3.17 and Django 6.
+## Users
+- **Admin (Librarian):** Manages books, users, and system data
+- **User (Student):** Browses available books and borrows them
 
----
+## Implemented Features
+- User authentication (login and admin access)
+- Book Create, Read, Update, and Delete (CRUD)
+- Borrowing and return logic with basic business rules
+- Admin dashboard for managing library data
+- Responsive user interface using Bootstrap 5
 
-## Setup Instructions
-
-**Requirements:**  
-Python 3.17, Django 6, MySQL 8.0 and a code editor such as VS Code.
-
-### Installation Steps
-
-- Clone the project repository  
-- Create and activate a virtual environment  
-- Install required dependencies  
-- Run database migrations  
-- Create a superuser account  
-- Start the Django development server  
-
----
-
-## Main Features
-
-- Menu management (add, view, edit, delete items)  
-- Reservation management (store and view reservations)  
-- Order management (record menu items and quantities)  
-- Bill calculation including tax and service charge  
-- Basic dashboard overview  
-- Error handling for invalid inputs  
-
----
-
-## Running Tests
-
-Tests can be run to verify system reliability.  
-The project includes unit tests, integration tests, system tests, and basic user-focused scenarios.
-
----
+## Setup
+1. Install Python (3.10+) and Django
+2. Clone the project repository
+3. Create and activate a virtual environment
+4. Install required dependencies
+5. Run database migrations
+6. Create an admin (superuser) account
+7. Start the development server
+8. Access the application via `http://127.0.0.1:8000/`
 
 ## Project Structure
-
-The project follows a standard Django structure with separate files for models, views, URLs, templates, static files, and tests.
-
----
-
-## Troubleshooting
-
-- If the server does not start, check the Python version and virtual environment  
-- If dependencies are missing, reinstall them  
-- If database errors occur, rerun migrations  
-
----
-
-## Contribution Guidelines
-
-- Fork the repository  
-- Create a feature branch  
-- Commit changes clearly  
-- Push the branch  
-- Submit a pull request  
-
----
-
-## Author
-
-Your name, GitHub profile, and email go here.
-
----
+- `core/` – Project configuration and settings
+- `library/` – Main application logic
+- `templates/` – HTML templates for user and admin interfaces
+- `models.py` – Database models
+- `views.py` – Request handling and business logic
+- `manage.py` – Django management script
 
 ## License
-
-This project is licensed under the MIT License.
+This project is developed for educational purposes as part of a software training program.
